@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Train Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading">
+    <div>Loading frames… <span id="progress-text">0%</span></div>
+    <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+  </div>
+
+  <canvas id="videoCanvas"></canvas>
+
+  <div id="throttle-lever">
+    <div id="lever-track">
+      <div id="lever-handle">▮</div>
+    </div>
+    <div id="lever-controls">
+      <button class="control-button brake">Brake</button>
+      <button class="control-button horn">Horn 🚂</button>
+    </div>
+  </div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>

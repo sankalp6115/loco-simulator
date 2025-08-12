@@ -160,3 +160,25 @@ function startAnimation() {
 }
 
 loadFrames();
+
+
+//content protection 
+function stopPlague() {
+    // Disable right-click
+    document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+    });
+
+    // Disable F12, Ctrl+Shift+I, Ctrl+U, etc.
+    document.addEventListener("keydown", function (e) {
+        if (
+            e.key === "F12" ||
+            (e.ctrlKey && e.shiftKey && ["i", "j", "c"].includes(e.key.toLowerCase())) ||
+            (e.ctrlKey && ["c","u","p","s"].includes(e.key.toLowerCase()))
+        ) {
+            e.preventDefault();
+        }
+    });
+};
+
+stopPlague();

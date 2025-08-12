@@ -11,12 +11,9 @@ def index():
 def serve_frames():
     frame_dir = os.path.join(app.static_folder, 'frame')
     frame_files = sorted([f for f in os.listdir(frame_dir) if f.lower().endswith('.jpg')])
-    frames = []
-    for filename in frame_files:
-        with open(os.path.join(frame_dir, filename), 'rb') as f:
-            frames.append(base64.b64encode(f.read()).decode('utf-8'))
+    frame_urls = [f"/static/frame/{f}" for f in frame_files]
     return {
         "frame_rate": 30,
-        "frames": frames,
-        "total_frames": len(frames)
+        "frames": frame_urls,
+        "total_frames": len(frame_urls)
     }

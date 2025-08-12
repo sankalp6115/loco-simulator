@@ -53,11 +53,11 @@ export function createVideoHandler(setSpeed) {
   }
 
   function playHorn() {
-    const horn = new Audio('horn.mp3');
+    const horn = new Audio('static/horn.mp3');
     horn.play()
     setTimeout(() => {
       horn.pause();
-    }, 6000);
+    }, 4000);
   }
 
   return { setThrottle, applyBrake, playHorn };

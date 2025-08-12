@@ -90,7 +90,7 @@ hornBtn.addEventListener("click", () => {
 // Load frames
 async function loadFrames() {
   try {
-    const resp = await fetch("http://localhost:5000/frames");
+    const resp = await fetch("/frames");
     const data = await resp.json();
     frameRate = data.frame_rate;
     const totalFrames = data.total_frames;
